@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import static org.junit.Assert.*;
 
-public class IOSMobileWebTest extends SauceTestClass {
+public class IOSMobileWebTest extends AppiumTestClass {
 
     @Before
     public void setUp() throws Exception {
@@ -30,6 +30,7 @@ public class IOSMobileWebTest extends SauceTestClass {
         WebElement submitElement = driver.findElement(By.id("submit"));
         assertNotNull(submitElement);
         submitElement.click();
+        Thread.sleep(2000);
         WebElement yourCommentsElement = driver.findElement(By.id("your_comments"));
         assertNotNull(yourCommentsElement);
         assertTrue(driver.findElement(By.id("your_comments")).getText().contains("This is an awesome comment"));
