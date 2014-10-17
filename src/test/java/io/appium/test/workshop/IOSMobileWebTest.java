@@ -3,7 +3,7 @@ package io.appium.test.workshop;
 import org.junit.Before;
 import org.junit.Test;
 
-public class IOSMobileWebTest extends AppiumTestClass {
+public class IOSMobileWebTest extends SauceTestClass {
 
     @Before
     public void setUp() throws Exception {
