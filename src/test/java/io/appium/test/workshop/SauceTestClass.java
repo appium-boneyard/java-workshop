@@ -6,7 +6,6 @@ import com.saucelabs.junit.SauceOnDemandTestWatcher;
 import org.junit.Rule;
 import org.junit.rules.TestName;
 
-import java.io.File;
 import java.text.MessageFormat;
 
 public abstract class SauceTestClass extends AppiumTestClass implements SauceOnDemandSessionIdProvider {
