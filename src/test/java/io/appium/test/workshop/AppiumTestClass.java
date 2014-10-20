@@ -77,11 +77,6 @@ public abstract class AppiumTestClass {
         WebElement yourCommentsElement = driver.findElement(By.id("your_comments"));
         assertNotNull(yourCommentsElement);
         assertTrue(driver.findElement(By.id("your_comments")).getText().contains("This is an awesome comment"));
-        WebElement name = driver.findElement(MobileBy.AccessibilityId("username"));
-        name.sendKeys("jlipps");
-        WebElement button = driver.findElement(MobileBy.className("UIAButton"));
-        button.getText(); // "Sign In"
-        button.click();
     }
 
     protected void switchToWebview() throws Exception {
