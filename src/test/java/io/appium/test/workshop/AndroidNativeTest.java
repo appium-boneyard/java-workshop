@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
-public class AndroidNativeTest extends AppiumTestClass {
+public class AndroidNativeTest extends SauceTestClass {
 
     @Before
     public void setUp() throws Exception {

@@ -3,7 +3,7 @@ package io.appium.test.workshop;
 import org.junit.Before;
 import org.junit.Test;
 
-public class IOSHybridTest extends AppiumTestClass {
+public class IOSHybridTest extends SauceTestClass {
 
     @Before
     public void setUp() throws Exception {
