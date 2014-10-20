@@ -6,6 +6,7 @@ import com.saucelabs.junit.SauceOnDemandTestWatcher;
 import org.junit.Rule;
 import org.junit.rules.TestName;
 
+import java.io.File;
 import java.text.MessageFormat;
 
 public abstract class SauceTestClass extends AppiumTestClass implements SauceOnDemandSessionIdProvider {
@@ -19,6 +20,11 @@ public abstract class SauceTestClass extends AppiumTestClass implements SauceOnD
 
     @Rule
     public SauceOnDemandTestWatcher resultReportingTestWatcher = new SauceOnDemandTestWatcher(this, authentication);
+
+    protected String getApp(String appFile) {
+        String s3Root = "https://appium.s3.amazonaws.com/";
+        return s3Root.concat(appFile);
+    }
 
     protected void preDriverInit() {
         appiumServer = MessageFormat.format("http://{0}:{1}@ondemand.saucelabs.com:80/wd/hub",
