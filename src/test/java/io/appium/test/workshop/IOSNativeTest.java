@@ -15,7 +15,7 @@ public class IOSNativeTest extends SauceTestClass {
     @Before
     public void setUp() throws Exception {
         capabilities.setCapability("deviceName", "iPhone Simulator");
-        capabilities.setCapability("platformVersion", "7.1");
+        capabilities.setCapability("platformVersion", "8.1");
         capabilities.setCapability("app", getApp("TestApp7.1.app.zip"));
         super.setUpIosDriver();
     }

@@ -33,18 +33,28 @@ public abstract class AppiumTestClass {
         return app.toString();
     }
 
-    protected void setUpIosDriver() throws Exception {
+    protected String getVersion(String defaultVersion) {
+        String userVer = System.getenv("VER");
+        if (userVer != null) {
+            return userVer;
+        }
+        return defaultVersion;
+    }
+
+    protected IOSDriver setUpIosDriver() throws Exception {
         preDriverInit();
         capabilities.setCapability("platformName", "iOS");
         driver = new IOSDriver(new URL(appiumServer), capabilities);
         postDriverInit();
+        return (IOSDriver) driver;
     }
 
-    protected void setUpAndroidDriver() throws Exception {
+    protected AndroidDriver setUpAndroidDriver() throws Exception {
         preDriverInit();
         capabilities.setCapability("platformName", "Android");
         driver = new AndroidDriver(new URL(appiumServer), capabilities);
         postDriverInit();
+        return (AndroidDriver) driver;
     }
 
     protected void preDriverInit() {

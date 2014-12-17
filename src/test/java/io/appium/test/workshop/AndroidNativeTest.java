@@ -1,10 +1,13 @@
 package io.appium.test.workshop;
 
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.remote.MobileBrowserType;
+import io.appium.java_client.remote.MobileCapabilityType;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.CapabilityType;
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,7 +18,7 @@ public class AndroidNativeTest extends SauceTestClass {
     @Before
     public void setUp() throws Exception {
         capabilities.setCapability("deviceName", "Android Emulator");
-        capabilities.setCapability("platformVersion", "4.4");
+        capabilities.setCapability("platformVersion", "5.0");
         capabilities.setCapability("app", getApp("ContactManager.apk"));
         super.setUpAndroidDriver();
     }
